@@ -1,0 +1,31 @@
+{% extends "base_template.html" %}
+{% block page_title %}Math - Addition{% endblock %}
+{% block toph1 %}Addition{% endblock %}
+{% block content %}
+    <div class="container" style="width: 30em; margin-top: 1em">
+        <div class="text-center">
+            <div class="text-center bg-dark border rounded">
+                <div style="padding: 1em">
+                    <div>
+                        <div class="align-middle">
+                            <div class="text-light">
+                                <h3 style="font-size: 2em">How Many Problems?</h3>
+                            </div>
+                        </div>
+                        <form method="post" id="num-sub" action="/math/addition/start">
+                            <div style="margin-bottom: 15px">
+                                <input type="number" id="add_questions" name="add_questions" class="border rounded text-center" min="0" value="10" style="max-width: 7em; font-size: 35px">
+                            </div>
+                            <div>
+                                <button id="num-amount" type="submit" class="btn btn-outline-warning btn-lg"  style="width: 100%" value="Submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block scripts %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/submitProbNum.js') }}"></script>
+    {% endblock %}
+{% endblock %}

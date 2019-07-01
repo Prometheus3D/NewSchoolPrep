@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block page_title %}Nav{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='page_config.css') }}">
+</head>
+<body class="bg-light" id="body">
+<nav class="navbar navmain rounded" style="background-color: #d74fab;">
+    <div class="logo-div">
+        <h1 id="toolbar-title" class="text-light">{% block toph1 %}Insert Here{% endblock %}</h1>
+    </div>
+    <div class="btn-group font-weight-bold">
+        <a href="/"><button href="/" class="btn btn-outline-light dropdown">Home</button></a>
+        <div class="btn-group">
+            <button class="btn btn-outline-light dropdown dropdown-toggle" type="button" data-toggle="dropdown"  style="width: 7em">Math</button>
+            <div class="dropdown-content dropdown-menu bg-dark">
+                <a href="/math/addition" class="text-warning">Addition</a>
+                <a href="/math/subtraction" class="text-warning" hidden>Subtraction</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="body-content">{% block content %}
+{% endblock %}</div>
+{% block scripts %}{% endblock %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

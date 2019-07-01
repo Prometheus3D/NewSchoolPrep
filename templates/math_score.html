@@ -1,0 +1,31 @@
+{%  extends 'base_template.html' %}
+{% block title %}<title>Math Score</title>{% endblock title %}
+{% block toph1 %}<h1>Your Score!</h1>{% endblock %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='math_score_style.css') }}">
+</head>
+<body>
+<div class="results-div">
+<h2 class="results-title">Results</h2>
+    <table class="results-table">
+        <tr>
+            <th class="results-th">Wrong</th>
+            <th class="results-th">Correct</th>
+            <th class="results-th">Questions Answered</th>
+            <th class="results-th" colspan="3">Percentage</th>
+        </tr>
+        <tr class="result-data">
+            <td class="mr-td">{{wrong}}</td>
+            <td class="mr-td">{{correct}}</td>
+            <td class="mr-td">{{total}}</td>
+            <td class="mr-td">{{percentage}}</td>
+        </tr>
+    </table>
+</div>
+<form method="post" class="answer-form" action="">
+    <input type="hidden" id="action">
+    <input type="submit" class="answer-button" value="Try Again" name="action" autofocus>
+</form>
+</body>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "base_template.html" %}
+{% block page_title %}Math - Addition{% endblock %}
+{% block toph1 %}Addition{% endblock %}
+{% block content %}
+    <div class="container" style="width: 30em; margin-top: 1em">
+        <div class="text-center">
+            <div class="text-center bg-dark border rounded">
+                <div style="padding: 1em">
+                    <div>
+                        <div class="align-middle">
+                            <div class="text-light">
+                                {% for problem in problems %}
+                                    {% include "_math_display.html" %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px">
+                            <input type="number" id="add-answer" class="border rounded text-center" min="0" style="max-width: 7em; font-size: 35px">
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-outline-warning btn-lg" onclick="checkAnswer()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="text-center">
+                {{ pagination.links }}
+            </div>
+        </div>
+    </div>
+    {% block scripts %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/additionCheck.js') }}"></script>
+    {% endblock %}
+{% endblock %}
